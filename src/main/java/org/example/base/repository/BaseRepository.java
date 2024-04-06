@@ -11,7 +11,4 @@ public interface BaseRepository <T extends BaseEntity<ID>, ID extends Serializab
     Optional<T> findById (ID id);
     void delete (T entity);
     List<T> findAll ();
-    void beginTransaction ();
-    void commitTransaction ();
-    void rollBack ();
 }
