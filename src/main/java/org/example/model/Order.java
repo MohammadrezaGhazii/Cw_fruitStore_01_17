@@ -17,8 +17,8 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "order")
 public class Order extends BaseEntity<Long> {
-    @Column(name = "owner")
-    private String owner;
+//    @Column(name = "owner")
+//    private String owner;
 
     @Column(name = "state")
     private State state;

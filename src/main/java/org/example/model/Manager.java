@@ -17,10 +17,13 @@ import org.example.base.entity.BaseEntity;
 public class Manager extends BaseEntity<Long> {
     @Column(name = "first_name")
      private String firstName;
+
     @Column(name = "last_name")
      private String lastName;
+
     @Column(name = "username",unique = true , nullable = false)
      private String username;
+
     @Column(name = "password")
      private String password;
 }

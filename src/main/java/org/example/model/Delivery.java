@@ -24,9 +24,6 @@ public class Delivery extends BaseEntity<Long> {
     @Column(name = "delivery_price")
     private BigDecimal deliveryPrice;
 
-    @Column(name = "start_time")
-    private LocalDate startTime;
-
-    @Column(name = "end_time")
-    private LocalDate endTime;
+    @Column(name = "duration")
+    private Integer duration;
 }
