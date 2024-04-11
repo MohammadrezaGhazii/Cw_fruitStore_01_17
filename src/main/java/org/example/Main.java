@@ -24,7 +24,7 @@ public class Main {
         Fruit fruit1 = new Fruit("Apple", "yellow", true, "Kg", 100.00, 15.00, 20.00, "2");
 
         fruitService.saveOrUpdate(fruit);
-        fruitService.saveOrUpdate(fruit1);
+        fruitService.saveOrUpdate(fruit1) ;
 
     }
 }
