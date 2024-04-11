@@ -1,12 +1,11 @@
 package org.example.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import org.example.base.entity.BaseEntity;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,22 +14,24 @@ import java.math.BigDecimal;
 @ToString
 
 @Entity
-@Table(name = "order")
+@Table(name = "orders")
 public class Order extends BaseEntity<Long> {
-//    @Column(name = "owner")
-//    private String owner;
+    @Column(name = "owner")
+    private Customer owner;
 
     @Column(name = "state")
     private State state;
 
-    @Column(name = "fruit_name")
-    private String fruitName;
+    @Column(name = "fruit_list")
+    @OneToMany
+    private List<Fruit> fruits;
 
     @Column(name = "fruit_weight")
     private String fruitWeight;
 
-//    @Column(name = "delivery_type")
-//    private String deliveryType;
+    @JoinColumn(name = "delivery_type")
+    @OneToOne(fetch = FetchType.EAGER)
+    private Delivery deliveryType;
 
     @Column(name = "total_price")
     private BigDecimal totalPrice;
