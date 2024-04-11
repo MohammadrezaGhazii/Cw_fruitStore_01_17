@@ -16,6 +16,10 @@ public abstract class BaseRepositoryImpl<T extends BaseEntity<ID>, ID extends Se
 
     private SessionFactory sessionFactory;
 
+    public BaseRepositoryImpl(SessionFactory sessionFactory) {
+        this.sessionFactory=sessionFactory;
+    }
+
     @Override
     public T saveOrUpdate(T entity) {
         Session session = sessionFactory.getCurrentSession();
@@ -47,5 +51,5 @@ public abstract class BaseRepositoryImpl<T extends BaseEntity<ID>, ID extends Se
         return query.getResultList();
     }
 
-    public abstract T getEntity();
+    public abstract String getEntity();
 }
