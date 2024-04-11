@@ -23,6 +23,7 @@ public class SessionFactorySingleton {
                     .addAnnotatedClass(Delivery.class)
                     .addAnnotatedClass(Fruit.class)
                     .addAnnotatedClass(Order.class)
+                    .addAnnotatedClass(Cart.class)
                     .buildMetadata()
                     .buildSessionFactory();
         }

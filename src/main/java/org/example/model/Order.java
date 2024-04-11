@@ -16,22 +16,22 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 public class Order extends BaseEntity<Long> {
-    @ManyToOne
-    private Customer owner;
+   // @ManyToOne
+    //private Customer owner;
 
     @Column(name = "state")
     private State state;
 
-    @Column(name = "fruit_list")
-    @OneToMany
-    private List<Fruit> fruits;
+//    @Column(name = "fruit_list")
+//    @OneToMany
+//    private List<Fruit> fruits;
 
     @Column(name = "fruit_weight")
     private String fruitWeight;
-
-    @JoinColumn(name = "delivery_type")
-    @OneToOne(fetch = FetchType.EAGER)
-    private Delivery deliveryType;
+//
+//    @JoinColumn(name = "delivery_type")
+//    @OneToOne(fetch = FetchType.EAGER)
+//    private Delivery deliveryType;
 
     @Column(name = "total_price")
     private BigDecimal totalPrice;
