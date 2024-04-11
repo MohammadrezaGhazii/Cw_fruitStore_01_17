@@ -16,7 +16,7 @@ import java.util.List;
 @Entity
 @Table(name = "orders")
 public class Order extends BaseEntity<Long> {
-    @Column(name = "owner")
+    @ManyToOne
     private Customer owner;
 
     @Column(name = "state")
