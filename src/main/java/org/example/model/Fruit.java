@@ -32,6 +32,9 @@ public class Fruit extends BaseEntity<Long> {
     @Column(name = "weight")
     private Double weight;
 
+    @Column(name = "inventory")
+    private Double inventory;
+
     @Column(name = "new_price")
     private BigDecimal newPrice;
 
