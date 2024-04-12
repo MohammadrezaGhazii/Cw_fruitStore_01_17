@@ -4,11 +4,11 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.example.base.entity.BaseEntity;
 
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 @Getter
 @Setter
-@ToString
+@ToString(exclude = {"customer","fruit" })
 
 @Entity
 @Table(name = "cart")
@@ -28,4 +28,23 @@ public class Cart extends BaseEntity<Long> {
 
 
 
+
+
+
+
+    public Cart(Long aLong) {
+        super(aLong);
+    }
+
+    public Cart(Long aLong, Double weight) {
+        super(aLong);
+        this.weight = weight;
+    }
+
+    public Cart(Double weight) {
+        this.weight = weight;
+    }
+
+    public Cart() {
+    }
 }

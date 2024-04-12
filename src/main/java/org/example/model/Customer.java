@@ -40,9 +40,9 @@ public class Customer extends BaseEntity<Long> {
 //    private List<Order> orders;
 
 
-    @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY,
+    @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER,
             cascade = CascadeType.ALL)
-    private List<Cart> carts;
+    private List<Cart> carts = new ArrayList<>();
 
     public void addCart(Cart cart) {
         if (carts == null)
@@ -77,6 +77,29 @@ public class Customer extends BaseEntity<Long> {
         super(aLong);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     //    @ManyToMany(fetch = FetchType.LAZY,
 //            cascade = {CascadeType.DETACH , CascadeType.MERGE , CascadeType.PERSIST , CascadeType.REFRESH})
 //    @JoinTable(
@@ -92,4 +115,10 @@ public class Customer extends BaseEntity<Long> {
 //        }
 //        orders.add(order);
 //    }
+
+
+
+
+
+
 }

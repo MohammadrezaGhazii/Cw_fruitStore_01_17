@@ -45,9 +45,9 @@ public class Fruit extends BaseEntity<Long> {
     private String tags;
 
 
-    @OneToMany(mappedBy = "fruit", fetch = FetchType.LAZY,
+    @OneToMany(mappedBy = "fruit", fetch = FetchType.EAGER,
             cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-    private List<Cart> carts;
+    private List<Cart> carts = new ArrayList<>();
 
 
     public void addCart(Cart cart) {
